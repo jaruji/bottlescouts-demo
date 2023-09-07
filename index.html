@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Sommify widget integration test</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src=""></script>
+<head>
+    <script src="https://elements.sommify.ai/js/v1"></script>
+</head>
+<body>
+
+<script>
+    const widget = Sommify.createWidget({
+      apiKey: 'somm-1d373d9d-8375-4791-a0fc-cbdbd0db7903',
+      limit: 3,
+      blockerVisible: true,
+      localization: 'cs',
+      currency: 'CZK'
+    });
+
+    widget.onAddToCart(wine => window.open(wine.url, 'blank_'))
+
+    widget.mount();
+  </script>
+
+<div class="">
+ <h1>Try our demo</h1>
+</div>
+
+</body>
+</html>
