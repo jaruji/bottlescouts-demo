@@ -15,10 +15,11 @@
 <script>
     const widget = Sommify.createWidget({
       apiKey: 'somm-d58490aa-5d49-48d0-aec3-9633c2022f4b',
-      limit: 3,
+      limit: 5,
       blockerVisible: true,
       localization: 'fi',
-      currency: 'EUR'
+      currency: 'EUR',
+      company: 'bs'
     });
 
     widget.onAddToCart(wine => window.open(wine.url, 'blank_'))
