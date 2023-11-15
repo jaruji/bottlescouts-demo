@@ -32,25 +32,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    const apiKey = getParameterByName('apiKey') || 'somm-344b50f9-4acf-46b1-9953-53d60fa51f0e'; // Default API key
-    const localization = getParameterByName('localization') || 'en'; // Default localization
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+        function(m,key,value) {
+          vars[key] = value;
+        });
+        return vars;
+      }
+
+    // const apiKey = getParameterByName('apiKey') || 'somm-344b50f9-4acf-46b1-9953-53d60fa51f0e'; // Default API key
+    // const localization = getParameterByName('localization') || 'en'; // Default localization
 
     const widget = Sommify.createWidget({
-        apiKey,
+        apiKey: getUrlVars()["apiKey"],
         limit: 5,
         blockerVisible: true,
-        localization,
+        localization: getUrlVars()["localization"],
         currency: 'EUR'
     });
 
     widget.onAddToCart(wine => window.open(wine.url, 'blank_'));
-
     widget.mount();
-
-    function getParameterByName(name) {
-        const url = new URL(window.location.href);
-        return url.searchParams.get(name);
-    }
 </script>
 </body>
 </html>
