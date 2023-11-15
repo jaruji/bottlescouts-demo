@@ -35,9 +35,6 @@
         return vars;
       }
 
-    // const apiKey = getParameterByName('apiKey') || 'somm-344b50f9-4acf-46b1-9953-53d60fa51f0e'; // Default API key
-    // const localization = getParameterByName('localization') || 'en'; // Default localization
-
     const widget = Sommify.createWidget({
         apiKey: getUrlVars()["apiKey"] || "tmp",
         limit: 5,
@@ -51,7 +48,7 @@
 </script>
 <div class="container">
     <h1>Welcome to Our Wine Shop</h1>
-    <p>Explore our fine selection of wines and try our demo chatbot.</p>
+    <p>Explore our fine selection of wines and try our sommelier</p>
 </div>
 </body>
 </html>
