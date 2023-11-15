@@ -21,12 +21,6 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Welcome to Our Wine Shop</h1>
-    <p>Explore our fine selection of wines and try our demo chatbot.</p>
-</div>
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -45,15 +39,19 @@
     // const localization = getParameterByName('localization') || 'en'; // Default localization
 
     const widget = Sommify.createWidget({
-        apiKey: getUrlVars()["apiKey"],
+        apiKey: getUrlVars()["apiKey"] || "tmp",
         limit: 5,
         blockerVisible: true,
-        localization: getUrlVars()["localization"],
+        localization: getUrlVars()["localization"] || "en",
         currency: 'EUR'
     });
 
     widget.onAddToCart(wine => window.open(wine.url, 'blank_'));
     widget.mount();
 </script>
+<div class="container">
+    <h1>Welcome to Our Wine Shop</h1>
+    <p>Explore our fine selection of wines and try our demo chatbot.</p>
+</div>
 </body>
 </html>
