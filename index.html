@@ -41,7 +41,8 @@
         limit: 5,
         blockerVisible: true,
         localization: getUrlVars()["localization"] || "en",
-        currency: 'EUR'
+        currency: 'EUR',
+        type: 'bs'
     });
 
     widget.onAddToCart(wine => window.open(wine.url, 'blank_'));
