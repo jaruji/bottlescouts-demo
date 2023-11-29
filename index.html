@@ -41,7 +41,7 @@
         limit: 5,
         blockerVisible: true,
         localization: getUrlVars()["localization"] || "en",
-        currency: 'EUR',
+        currency: getUrlVars()["localization"] || "EUR",
         type: 'bs'
     });
 
