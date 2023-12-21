@@ -42,7 +42,7 @@
         blockerVisible: true,
         localization: getUrlVars()["localization"] || "en",
         currency: getUrlVars()["currency"] || "EUR",
-        type: 'bs'
+        company: getUrlVars()["company"] || "",
     });
 
     widget.onAddToCart(wine => window.open(wine.url, 'blank_'));
